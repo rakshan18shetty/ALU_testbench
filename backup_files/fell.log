@@ -1,0 +1,249 @@
+Command: vcs -V -R -full64 -sverilog +v2k -debug_access +all -l fell.log alu_testbench.v \
+
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/bin/vcs1 -Mcc=gcc \
+-Mcplusplus=g++ -Masflags= -Mcfl= -pipe -fPIC -O -I/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/include \
+-Mxllcflags= -Mxcflags= -pipe -fPIC -I/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/include \
+-Mldflags= -rdynamic  -Mout=simv -Mamsrun="" -Mvcsaceobjs="" -Mobjects=" /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libvirsim.so \
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/liberrorinf.so \
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libsnpsmalloc.so \
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libvfs.so " \
+-Mexternalobj= -Msaverestoreobj=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcs_save_restore_new.o \
+-Mcrt0= -Mcrtn="" -Mcsrc="" -Msyslibs=/fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/pli.a \
+-ldl  -l fell.log -Xvcs_run_simv=1 -V -full64 +v2k -debug_access +vpi +vcsd1 +itf+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcsdp_lite.tab \
++all -picarchive -P /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/verdi.tab \
+-fsdb -sverilog -gen_obj alu_testbench.v  
+                         Chronologic VCS (TM)
+      Version Q-2020.03-SP2-8_Full64 -- Sat May  9 22:48:39 2026
+               Copyright (c) 1991-2020 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file 'alu_testbench.v'
+Parsing included file 'design.v'.
+Back to file 'alu_testbench.v'.
+Parsing included file 'alu_reference_model.v'.
+Back to file 'alu_testbench.v'.
+Top Level Modules:
+       alu_testbench
+TimeScale is 1 ns / 1 ps
+Starting vcs inline pass...
+
+1 module and 0 UDP read.
+recompiling module alu_testbench
+( cd csrc ; make -f Makefile SNPS_VCS_TMPDIR=/tmp/vcs_20260509171838_40609 product \
+)
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
+rm -f _cuarc0.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
+-Wl,-rpath=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib \
+-L/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib  -Wl,-rpath-link=./ \
+/usr/lib64/libnuma.so.1     _41326_archive_1.so _prev_archive_1.so _cuarc0.so  SIM_l.o \
+rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o        \
+-lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcs_tls.o \
+-Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   \
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcs_save_restore_new.o \
+/fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/pli.a \
+-ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+Running simv -V +v2k +all -a fell.log 
+Command: /fetools/work_area/frontend/Batch_11/rakshanshetty/ALU_test/./simv -V +v2k +all -a fell.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  May  9 22:48 2026
+VCS Build Date = Sep 11 2021 20:22:52
+Start run at May  9 22:48 2026
+
+[PASS]                                                                            RESET
+  DUT: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+
+=== Testing Arithmetic Operations (MODE=1) ===
+[PASS]                                                                              ADD: OPA=0x0f OPB=0x11 CMD=0x0
+  DUT: RES=0x0020 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0020 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[PASS]                                                                      ADD (carry): OPA=0xff OPB=0x01 CMD=0x0
+  DUT: RES=0x0100 COUT=1 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0100 COUT=1 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                              SUB: OPA=0x20 OPB=0x10 CMD=0x1
+  DUT: RES=0x0010 COUT=1 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0010 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                   SUB (overflow): OPA=0x10 OPB=0x20 CMD=0x1
+  DUT: RES=0x00f0 COUT=0 OFLOW=1 G=0 E=0 L=0 ERR=0
+  REF: RES=0xfff0 COUT=0 OFLOW=1 G=0 E=0 L=0 ERR=0
+[PASS]                                                                          ADD_CIN: OPA=0x10 OPB=0x20 CMD=0x2
+  DUT: RES=0x0031 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0031 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[PASS]                                                                          ADD_CIN: OPA=0x10 OPB=0x20 CMD=0x2
+  DUT: RES=0x0030 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0030 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[PASS]                                                                   ADD_CIN(carry): OPA=0xf0 OPB=0x20 CMD=0x2
+  DUT: RES=0x0111 COUT=1 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0111 COUT=1 OFLOW=0 G=0 E=0 L=0 ERR=0
+[PASS]                                                                   ADD_CIN(carry): OPA=0xf0 OPB=0x20 CMD=0x2
+  DUT: RES=0x0110 COUT=1 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0110 COUT=1 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                SUB_CIN(overflow): OPA=0x10 OPB=0x20 CMD=0x3
+  DUT: RES=0x00ef COUT=0 OFLOW=1 G=0 E=0 L=0 ERR=0
+  REF: RES=0xffef COUT=0 OFLOW=1 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                SUB_CIN(overflow): OPA=0x10 OPB=0x20 CMD=0x3
+  DUT: RES=0x00f0 COUT=0 OFLOW=1 G=0 E=0 L=0 ERR=0
+  REF: RES=0xfff0 COUT=0 OFLOW=1 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                          SUB_CIN: OPA=0xf0 OPB=0x20 CMD=0x3
+  DUT: RES=0x00cf COUT=1 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x00cf COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                          SUB_CIN: OPA=0xf0 OPB=0x20 CMD=0x3
+  DUT: RES=0x00d0 COUT=1 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x00d0 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[PASS]                                                                            INC_A: OPA=0x00 OPB=0x00 CMD=0x4
+  DUT: RES=0x0001 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0001 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                            INC_A: OPA=0xff OPB=0x00 CMD=0x4
+  DUT: RES=0x0100 COUT=1 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[PASS]                                                                            DEC_A: OPA=0x0f OPB=0x00 CMD=0x5
+  DUT: RES=0x000e COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x000e COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                            DEC_A: OPA=0x00 OPB=0x00 CMD=0x5
+  DUT: RES=0xffff COUT=0 OFLOW=1 G=0 E=0 L=0 ERR=0
+  REF: RES=0x00ff COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[PASS]                                                                            INC_B: OPA=0x00 OPB=0x00 CMD=0x6
+  DUT: RES=0x0001 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0001 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                            INC_B: OPA=0x00 OPB=0xff CMD=0x6
+  DUT: RES=0x0100 COUT=1 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                            DEC_B: OPA=0x00 OPB=0x00 CMD=0x7
+  DUT: RES=0xffff COUT=0 OFLOW=1 G=0 E=0 L=0 ERR=0
+  REF: RES=0x00ff COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[PASS]                                                                            DEC_B: OPA=0x00 OPB=0xff CMD=0x7
+  DUT: RES=0x00fe COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x00fe COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[PASS]                                                                      CMP (equal): OPA=0x10 OPB=0x10 CMD=0x8
+  DUT: RES=0x0000 COUT=0 OFLOW=0 G=0 E=1 L=0 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=1 L=0 ERR=0
+[PASS]                                                                    CMP (greater): OPA=0x20 OPB=0x10 CMD=0x8
+  DUT: RES=0x0000 COUT=0 OFLOW=0 G=1 E=0 L=0 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=1 E=0 L=0 ERR=0
+[PASS]                                                                       CMP (less): OPA=0x10 OPB=0x20 CMD=0x8
+  DUT: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=1 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=1 ERR=0
+[FAIL]                                                               sign add positive : OPA=0x5a OPB=0x0c CMD=0xb
+  DUT: RES=0x0066 COUT=0 OFLOW=0 G=1 E=0 L=0 ERR=0
+  REF: RES=0x0066 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                     sign add positive (overflow): OPA=0x5a OPB=0x5c CMD=0xb
+  DUT: RES=0x00b6 COUT=0 OFLOW=1 G=0 E=0 L=1 ERR=0
+  REF: RES=0x00b6 COUT=0 OFLOW=1 G=0 E=0 L=0 ERR=0
+[FAIL]                                                               sign add negative : OPA=0xaa OPB=0x0c CMD=0xb
+  DUT: RES=0xffb6 COUT=1 OFLOW=0 G=0 E=0 L=1 ERR=0
+  REF: RES=0xffb6 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                     sign add negative (overflow): OPA=0xaa OPB=0xac CMD=0xb
+  DUT: RES=0xff56 COUT=1 OFLOW=1 G=0 E=0 L=1 ERR=0
+  REF: RES=0xff56 COUT=0 OFLOW=1 G=0 E=0 L=0 ERR=0
+[FAIL]                                                               sign sub positive : OPA=0x5a OPB=0xf4 CMD=0xc
+  DUT: RES=0x0066 COUT=0 OFLOW=0 G=1 E=0 L=0 ERR=0
+  REF: RES=0x0066 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                     sign sub positive (overflow): OPA=0x5a OPB=0xa4 CMD=0xc
+  DUT: RES=0x00b6 COUT=0 OFLOW=1 G=1 E=0 L=0 ERR=0
+  REF: RES=0x00b6 COUT=0 OFLOW=1 G=0 E=0 L=0 ERR=0
+[FAIL]                                                               sign sub negative : OPA=0xaa OPB=0xf4 CMD=0xc
+  DUT: RES=0xffb6 COUT=1 OFLOW=0 G=0 E=0 L=1 ERR=0
+  REF: RES=0xffb6 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                     sign sub negative (overflow): OPA=0xaa OPB=0x54 CMD=0xc
+  DUT: RES=0xff56 COUT=1 OFLOW=1 G=0 E=0 L=1 ERR=0
+  REF: RES=0xff56 COUT=0 OFLOW=1 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                            ERROR: OPA=0xaa OPB=0xfb CMD=0xd
+  DUT: RES=0xff56 COUT=0 OFLOW=1 G=0 E=0 L=1 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=1
+[FAIL]                                                                            ERROR: OPA=0xaa OPB=0xfb CMD=0xe
+  DUT: RES=0xff56 COUT=0 OFLOW=1 G=0 E=0 L=1 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=1
+[FAIL]                                                                            ERROR: OPA=0xaa OPB=0xfb CMD=0xf
+  DUT: RES=0xff56 COUT=0 OFLOW=1 G=0 E=0 L=1 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=1
+
+=== Testing Logical Operations (MODE=0) ===
+[FAIL]                                                                              AND: OPA=0xf0 OPB=0x0f CMD=0x0
+  DUT: RES=0xff00 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                             NAND: OPA=0xf0 OPB=0x0f CMD=0x1
+  DUT: RES=0xffff COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x00ff COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                               OR: OPA=0xf0 OPB=0x0f CMD=0x2
+  DUT: RES=0xffff COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x00ff COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                              NOR: OPA=0xf0 OPB=0x0f CMD=0x3
+  DUT: RES=0xff00 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                              XOR: OPA=0xaa OPB=0x55 CMD=0x4
+  DUT: RES=0xffff COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x00ff COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                             XNOR: OPA=0xaa OPB=0x55 CMD=0x5
+  DUT: RES=0xff00 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                            NOT_A: OPA=0xf0 OPB=0x00 CMD=0x6
+  DUT: RES=0xff0f COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x000f COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                            NOT_B: OPA=0xf0 OPB=0x0a CMD=0x7
+  DUT: RES=0xfff5 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x00f5 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                             RS_A: OPA=0x01 OPB=0x00 CMD=0x8
+  DUT: RES=0xff00 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                             RS_A: OPA=0x80 OPB=0x00 CMD=0x8
+  DUT: RES=0xff40 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0040 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                             LS_A: OPA=0x01 OPB=0x00 CMD=0x9
+  DUT: RES=0xff02 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0002 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                             LS_A: OPA=0x80 OPB=0x00 CMD=0x9
+  DUT: RES=0xff00 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                             RS_B: OPA=0x00 OPB=0x01 CMD=0xa
+  DUT: RES=0xff00 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                             RS_B: OPA=0x00 OPB=0x80 CMD=0xa
+  DUT: RES=0xff40 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0040 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                             LS_B: OPA=0x00 OPB=0x01 CMD=0xb
+  DUT: RES=0xff02 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0002 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                             LS_B: OPA=0x00 OPB=0x80 CMD=0xb
+  DUT: RES=0xff00 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                              ROL: OPA=0xaa OPB=0x0b CMD=0xc
+  DUT: RES=0xff55 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0055 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                              ROL: OPA=0xaa OPB=0xfb CMD=0xc
+  DUT: RES=0xff55 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=1
+  REF: RES=0x0055 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=1
+[FAIL]                                                                              ROR: OPA=0xaa OPB=0x0b CMD=0xd
+  DUT: RES=0xff55 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0055 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+[FAIL]                                                                              ROR: OPA=0xaa OPB=0xfb CMD=0xd
+  DUT: RES=0xff55 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=1
+  REF: RES=0x0055 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=1
+[FAIL]                                                                            ERROR: OPA=0xaa OPB=0xfb CMD=0xe
+  DUT: RES=0xff00 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=1
+[FAIL]                                                                            ERROR: OPA=0xaa OPB=0xfb CMD=0xf
+  DUT: RES=0xff00 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=0
+  REF: RES=0x0000 COUT=0 OFLOW=0 G=0 E=0 L=0 ERR=1
+
+=== TEST SUMMARY ===
+Total Tests: 57
+PASS: 14
+FAIL: 43
+
+*** SOME TESTS FAILED ***
+
+$finish called from file "alu_testbench.v", line 130.
+$finish at simulation time              2705000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 2705000 ps
+CPU Time:      0.350 seconds;       Data structure size:   0.0Mb
+Sat May  9 22:48:46 2026
+CPU time: .611 seconds to compile + .250 seconds to elab + .420 seconds to link + .395 seconds in simulation
